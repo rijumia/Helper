@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Banner Slider</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Banner Section -->
+<div id="bannerSlider" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#bannerSlider" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#bannerSlider" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#bannerSlider" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="https://picsum.photos/1920/700?random=1"
+                 class="d-block w-100"
+                 alt="Banner 1">
+
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                <h1>Welcome to Our Website</h1>
+                <p>Build modern websites using Bootstrap 5.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="https://picsum.photos/1920/700?random=2"
+                 class="d-block w-100"
+                 alt="Banner 2">
+
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                <h1>Professional Business</h1>
+                <p>Create responsive websites quickly.</p>
+                <a href="#" class="btn btn-success">Our Services</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="https://picsum.photos/1920/700?random=3"
+                 class="d-block w-100"
+                 alt="Banner 3">
+
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                <h1>Creative Solutions</h1>
+                <p>Bootstrap 5 makes web development easy.</p>
+                <a href="#" class="btn btn-warning">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#bannerSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#bannerSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

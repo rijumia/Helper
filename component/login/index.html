@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+
+    <!-- Favicon Link Here -->
+    <link
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/previews/032/461/353/non_2x/home-icon-for-dwelling-and-residence-vector.jpg"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap CDN Link Here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons link here -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom Style Here -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Centered Login Form with Validation & Toast Popup -->
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100 py-5"
+    >
+      <div
+        class="card shadow-lg border-0 w-100 rounded-4"
+        style="max-width: 450px"
+      >
+        <div class="card-body p-4 p-md-5">
+          <div class="text-center mb-4">
+            <div
+              class="bg-primary-subtle text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+              style="width: 60px; height: 60px"
+            >
+              <i class="bi bi-shield-lock-fill fs-2"></i>
+            </div>
+            <h3 class="fw-bold">Secure Login</h3>
+            <p class="text-muted small">Enter your credentials to continue</p>
+          </div>
+
+          <form id="customLoginForm">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="usernameInput"
+                placeholder="Username"
+                required
+              />
+              <label for="usernameInput"
+                ><i class="bi bi-person me-2 text-muted"></i>Username</label
+              >
+            </div>
+            <div class="form-floating mb-3 position-relative">
+              <input
+                type="password"
+                class="form-control"
+                id="passwordInput"
+                placeholder="Password"
+                required
+              />
+              <label for="passwordInput"
+                ><i class="bi bi-lock me-2 text-muted"></i>Password</label
+              >
+            </div>
+
+            <div
+              class="d-flex justify-content-between align-items-center mb-4 small"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input shadow-none cursor-pointer"
+                  type="checkbox"
+                  value=""
+                  id="rememberMe"
+                />
+                <label
+                  class="form-check-label text-muted cursor-pointer"
+                  for="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+              <a href="#" class="text-primary text-decoration-none fw-medium"
+                >Forgot password?</a
+              >
+            </div>
+
+            <button
+              class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm"
+              type="submit"
+            >
+              Sign In <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </form>
+
+          <div class="text-center mt-4 pt-3 border-top small text-muted">
+            Don't have an account?
+            <a href="#" class="text-primary fw-bold text-decoration-none"
+              >Register Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Toast Container for Popup Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="loginSuccessToast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body fw-medium">
+            <i class="bi bi-check-circle-fill me-2"></i> Authentication
+            successful!
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Required JS for handling the form submission popup -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("customLoginForm");
+        if (loginForm) {
+          loginForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent page reload
+            // In a real app, you would validate and send AJAX request here
+
+            // Show Bootstrap Toast popup on success
+            const toastEl = document.getElementById("loginSuccessToast");
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+          });
+        }
+      });
+    </script>
+
+    <!-- bootstrap js link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom js here -->
+    <script src="script.js"></script>
+  </body>
+</html>
