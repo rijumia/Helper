@@ -320,6 +320,136 @@
       </div>
     </section>
 
+    <!-- Visitor Counter Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Website Statistics</h2>
+
+        <div class="row g-4">
+          <!-- Your Visits -->
+          <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+              <div class="card-body py-4">
+                <i class="bi bi-person-fill fs-1 text-primary"></i>
+
+                <h5 class="mt-3">Your Visits</h5>
+
+                <h2 id="visits">0</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page Views -->
+          <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+              <div class="card-body py-4">
+                <i class="bi bi-eye-fill fs-1 text-success"></i>
+
+                <h5 class="mt-3">Page Views</h5>
+
+                <h2 id="pageViews">0</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Session Time -->
+          <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+              <div class="card-body py-4">
+                <i class="bi bi-stopwatch-fill fs-1 text-danger"></i>
+
+                <h5 class="mt-3">Session Time</h5>
+
+                <h2 id="sessionTime">00:00</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Time -->
+          <div class="col-md-3">
+            <div class="card shadow border-0 text-center">
+              <div class="card-body py-4">
+                <i class="bi bi-clock-fill fs-1 text-warning"></i>
+
+                <h5 class="mt-3">Current Time</h5>
+
+                <h2 id="clock">00:00:00</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      /* ----------------------------
+   YOUR VISITS
+---------------------------- */
+
+      let visits = localStorage.getItem("myVisits");
+
+      if (visits == null) {
+        visits = 1;
+      } else {
+        visits = Number(visits) + 1;
+      }
+
+      localStorage.setItem("myVisits", visits);
+
+      document.getElementById("visits").innerHTML = visits;
+
+      /* ----------------------------
+   PAGE VIEWS
+---------------------------- */
+
+      let pageViews = sessionStorage.getItem("pageViews");
+
+      if (pageViews == null) {
+        pageViews = 1;
+      } else {
+        pageViews = Number(pageViews) + 1;
+      }
+
+      sessionStorage.setItem("pageViews", pageViews);
+
+      document.getElementById("pageViews").innerHTML = pageViews;
+
+      /* ----------------------------
+   SESSION TIMER
+---------------------------- */
+
+      let seconds = 0;
+
+      setInterval(function () {
+        seconds++;
+
+        let min = Math.floor(seconds / 60);
+
+        let sec = seconds % 60;
+
+        if (min < 10) min = "0" + min;
+        if (sec < 10) sec = "0" + sec;
+
+        document.getElementById("sessionTime").innerHTML = min + ":" + sec;
+      }, 1000);
+
+      /* ----------------------------
+   DIGITAL CLOCK
+---------------------------- */
+
+      function updateClock() {
+        let now = new Date();
+
+        let time = now.toLocaleTimeString();
+
+        document.getElementById("clock").innerHTML = time;
+      }
+
+      updateClock();
+
+      setInterval(updateClock, 1000);
+    </script>
+
     <footer class="footer">© 2026 Bootstrap 5 Components Library</footer>
   </body>
 </html>
